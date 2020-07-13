@@ -13,6 +13,14 @@ body {
 
 }
 
+#instruction {
+    font-size: 1.15em;
+    color: #dd3333;
+    height: 1.15em;
+    padding: 0px;
+    margin: 50px 0px 0px 0px;
+}
+
 #buttonStartAndStop {
     font-size: 1em;
     background-color: #3333dd;
