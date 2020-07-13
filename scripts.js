@@ -17,7 +17,7 @@ const start = () => {
     startTime = Date.now();
     timeStarted = true;
     buttonStartAndStop.innerHTML = "STOP";
-    instruction.innerHTML = "";
+    instruction.innerHTML = "Running...";
     timeOut = setTimeout(() => {
         instruction.innerHTML = "WAITED TOO LONG";
         stop(false);
