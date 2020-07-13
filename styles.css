@@ -22,9 +22,15 @@ body {
     margin: 50px 0px 0px 0px;
 }
 
-#result {
+#listResults {
+    list-style-type: none;
+    padding: 0px;
+    margin: 50px 0px 0px 0px;
+}
+
+#listResults li {
     font-size: 1.3em;
     color: #ffffff;
     padding: 0px;
-    margin: 50px 0px 0px 0px;
+    margin: 5px 0px;
 }
