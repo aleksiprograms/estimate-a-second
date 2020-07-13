@@ -9,7 +9,7 @@ const onButtonClick = (event) => {
         buttonStartAndStop.innerHTML = "STOP";
     } else {
         buttonStartAndStop.innerHTML = "START";
-        result.innerHTML = Date.now() - startTime;
+        result.innerHTML = ((Date.now() - startTime) / 1000).toFixed(3) + " s";
     }
     timeStarted = !timeStarted;
 }
