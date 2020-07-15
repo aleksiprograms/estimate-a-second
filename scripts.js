@@ -2,7 +2,7 @@ let timeStarted = false;
 let startTime = 0;
 let instruction = document.getElementById("instruction");
 let buttonStartAndStop = document.getElementById("buttonStartAndStop");
-let listResults = document.getElementById("listResults");
+let tableResults = document.getElementById("tableResults");
 let timeOut;
 
 const onButtonClick = (event) => {
@@ -26,11 +26,35 @@ const start = () => {
 
 const stop = (addToList) => {
     if (addToList) {
-        let result = ((Date.now() - startTime) / 1000).toFixed(3) + " s";
+        let result = (Date.now() - startTime) / 1000;
+        let resultFormated = result.toFixed(3) + " s";
         instruction.innerHTML = ""
-        let li = document.createElement("li");
-        li.appendChild(document.createTextNode(result));
-        listResults.insertBefore(li, listResults.childNodes[0]);
+        let row = tableResults.insertRow(0);
+        let cellResult = row.insertCell(0);
+        let cellEvaluation = row.insertCell(1);
+        cellResult.innerHTML = resultFormated;
+        cellResult.className = "result"
+        if (resultFormated === "10.000 s") {
+            cellEvaluation.innerHTML = "PERFECT";
+            cellEvaluation.className = "evaluation"
+            cellEvaluation.classList.add("evaluationPerfect");
+        } else if (Math.abs(result - 10) <= 0.5) {
+            cellEvaluation.innerHTML = "NICE";
+            cellEvaluation.className = "evaluation"
+            cellEvaluation.classList.add("evaluationNice");
+        } else if (Math.abs(result - 10) <= 1) {
+            cellEvaluation.innerHTML = "GOOD";
+            cellEvaluation.className = "evaluation"
+            cellEvaluation.classList.add("evaluationGood");
+        } else if (Math.abs(result - 10) <= 2) {
+            cellEvaluation.innerHTML = "OK";
+            cellEvaluation.className = "evaluation"
+            cellEvaluation.classList.add("evaluationOK");
+        } else {
+            cellEvaluation.innerHTML = "BAD";
+            cellEvaluation.className = "evaluation"
+            cellEvaluation.classList.add("evaluationBad");
+        }
     }
     timeStarted = false;
     buttonStartAndStop.innerHTML = "START";

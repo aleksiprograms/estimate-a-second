@@ -31,15 +31,43 @@ body {
     margin: 20px 0px 0px 0px;
 }
 
-#listResults {
-    list-style-type: none;
+#tableResults {
     padding: 0px;
     margin: 30px 0px 0px 0px;
+    border-spacing: 20px 5px;
 }
 
-#listResults li {
+.result {
     font-size: 1.3em;
     color: #ffffff;
+    text-align: right;
     padding: 0px;
-    margin: 5px 0px;
+    margin: 0px;
+}
+
+.evaluation {
+    font-size: 1.3em;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+.evaluationPerfect {
+    color: #00ff00;
+}
+
+.evaluationNice {
+    color: #00ffff;
+}
+
+.evaluationGood {
+    color: #ffff00;
+}
+
+.evaluationOK {
+    color: #ff8800;
+}
+
+.evaluationBad {
+    color: #ff0000;
 }
