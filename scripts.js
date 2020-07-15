@@ -21,7 +21,7 @@ const start = () => {
     timeOut = setTimeout(() => {
         instruction.innerHTML = "WAITED TOO LONG";
         stop(false);
-    }, 10000);
+    }, 30000);
 }
 
 const stop = (addToList) => {
